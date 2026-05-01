@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning Lab</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f5f6f4;
+        --ink: #1b1d20;
+        --muted: #65707a;
+        --line: #24282c;
+        --folder: #dceee5;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      main {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 28px 18px;
+      }
+
+      .picker {
+        display: grid;
+        gap: 14px;
+      }
+
+      .folder {
+        position: relative;
+        display: block;
+        min-height: 88px;
+        padding: 24px 18px 16px;
+        border: 1px solid var(--line);
+        background: var(--folder);
+        color: var(--ink);
+        text-decoration: none;
+        box-shadow: 4px 4px 0 var(--ink);
+      }
+
+      .folder::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: -1px;
+        width: min(190px, 42%);
+        height: 12px;
+        border: 1px solid var(--line);
+        border-bottom: 0;
+        background: var(--folder);
+      }
+
+      .folder:hover,
+      .folder:focus-visible {
+        transform: translate(-1px, -1px);
+        box-shadow: 5px 5px 0 var(--ink);
+        outline: none;
+      }
+
+      .folder-title {
+        display: block;
+        max-width: 64ch;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .folder-meta {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      .feed {
+        display: grid;
+        gap: 12px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .back,
+      .refresh {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 12px;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      .back:hover,
+      .back:focus-visible,
+      .refresh:hover,
+      .refresh:focus-visible {
+        color: var(--ink);
+      }
+
+      details {
+        border: 1px solid var(--line);
+        background: #ffffff;
+      }
+
+      summary {
+        display: grid;
+        gap: 7px;
+        padding: 12px;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::before {
+        content: "+";
+        float: right;
+        justify-self: end;
+        margin-bottom: -20px;
+        font-weight: 700;
+      }
+
+      details[open] summary::before {
+        content: "-";
+      }
+
+      .point-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0;
+        max-width: 62ch;
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .synthesis {
+        margin: 0;
+        max-width: 66ch;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .expanded {
+        display: grid;
+        gap: 12px;
+        border-top: 1px solid var(--line);
+        padding: 12px;
+      }
+
+      .media {
+        display: grid;
+        gap: 10px;
+      }
+
+      figure {
+        margin: 0;
+        border: 1px solid var(--line);
+        background: #eef3f6;
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      figcaption {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.35;
+        padding: 8px;
+      }
+
+      .interaction {
+        margin: 0;
+        font-family: inherit;
+        font-size: 13px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+      }
+
+      .interaction {
+        padding: 0;
+      }
+
+      .empty {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 620px) {
+        main {
+          padding: 24px 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app"></main>
+
+    <script>
+      const app = document.querySelector("#app");
+      let resources = [];
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function formatDate(value) {
+        if (!value) return "";
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return "";
+        return new Intl.DateTimeFormat(undefined, {
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit"
+        }).format(date);
+      }
+
+      function currentSlug() {
+        const params = new URLSearchParams(location.hash.replace(/^#/, ""));
+        return params.get("resource") || "";
+      }
+
+      function artifactText(item) {
+        if (Array.isArray(item.interaction) && item.interaction.length) {
+          return item.interaction.map(message => {
+            const who = message.role || message.speaker || "note";
+            return `${who}: ${message.content || message.text || ""}`.trim();
+          }).join("\n\n");
+        }
+
+        return item.transcript || item.interaction || item.note || "";
+      }
+
+      function renderMedia(item) {
+        const media = Array.isArray(item.media) ? item.media : [];
+        if (!media.length) return "";
+        const normalizeSrc = value => {
+          const raw = String(value || "");
+          if (!raw) return "";
+          if (raw.startsWith("http://") || raw.startsWith("https://") || raw.startsWith("//") || raw.startsWith("data:")) return raw;
+          return `/${raw.replace(/^\/+/, "")}`;
+        };
+
+        return `
+          <div class="media">
+            ${media.map(asset => `
+              <figure>
+                <img src="${encodeURI(normalizeSrc(asset.src))}" alt="${escapeHtml(asset.alt || asset.caption || "artifact image")}">
+                ${asset.caption ? `<figcaption>${escapeHtml(asset.caption)}</figcaption>` : ""}
+              </figure>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function renderPicker() {
+        if (!resources.length) {
+          app.innerHTML = '<p class="empty">No resources yet.</p>';
+          return;
+        }
+
+        app.innerHTML = `
+          <section class="picker" aria-label="Resources">
+            ${resources.map(resource => `
+              <a class="folder" href="#resource=${encodeURIComponent(resource.slug)}">
+                <span class="folder-title">${escapeHtml(resource.title)}</span>
+                <span class="folder-meta">${escapeHtml(resource.type || "resource")}${resource.author ? ` / ${escapeHtml(resource.author)}` : ""}</span>
+              </a>
+            `).join("")}
+          </section>
+        `;
+      }
+
+      function renderFeed(resource, artifacts) {
+        const body = artifacts.length ? artifacts.map(item => {
+          const fullText = artifactText(item);
+          const synthesis = item.synthesis || item.note || "";
+          return `
+            <details>
+              <summary>
+                <span class="point-meta">
+                  <span>${escapeHtml(item.marker || "no marker")}</span>
+                  <span>${escapeHtml(formatDate(item.createdAt))}</span>
+                </span>
+                <h2>${escapeHtml(item.title || "Untitled point")}</h2>
+              </summary>
+              <div class="expanded">
+                ${synthesis ? `<p class="synthesis">${escapeHtml(synthesis)}</p>` : ""}
+                ${renderMedia(item)}
+                <pre class="interaction">${escapeHtml(fullText || "No interaction recorded.")}</pre>
+              </div>
+            </details>
+          `;
+        }).join("") : '<p class="empty">No points yet.</p>';
+
+        app.innerHTML = `
+          <div class="topbar">
+            <a class="back" href="#">resources</a>
+            <button class="refresh" type="button" data-refresh>refresh</button>
+          </div>
+          <section class="feed" aria-label="${escapeHtml(resource.title)}">
+            ${body}
+          </section>
+        `;
+      }
+
+      app.addEventListener("click", event => {
+        if (event.target.closest("[data-refresh]")) {
+          route();
+        }
+      });
+
+      async function route() {
+        const slug = currentSlug();
+        if (!slug) {
+          renderPicker();
+          return;
+        }
+
+        const resource = resources.find(item => item.slug === slug);
+        if (!resource) {
+          app.innerHTML = '<p class="empty">Resource not found.</p>';
+          return;
+        }
+
+        const response = await fetch(`/api/resources/${encodeURIComponent(slug)}/artifacts`);
+        if (!response.ok) {
+          app.innerHTML = '<p class="empty">Could not load this resource.</p>';
+          return;
+        }
+
+        renderFeed(resource, await response.json());
+      }
+
+      async function start() {
+        try {
+          const response = await fetch("/api/resources");
+          if (!response.ok) throw new Error("Could not load resources");
+          resources = await response.json();
+          await route();
+        } catch (error) {
+          app.innerHTML = '<p class="empty">Could not load resources.</p>';
+        }
+      }
+
+      window.addEventListener("hashchange", route);
+      start();
+    </script>
+  </body>
+</html>

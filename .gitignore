@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+*.log
+node_modules/
+
+# Learning resources often contain private notes and transcripts.
+# Direct child resource folders stay local unless intentionally force-added.
+/*/resource.json
+/*/artifacts.json
+/*/artifacts/

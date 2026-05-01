@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learning Lab Tutor"
+  short_description: "Study resources and save stuck points."
+  default_prompt: "Use $learning-lab-tutor while I study a resource, pause with questions, work through the idea from first principles, and save the interaction as a Learning Lab artifact."
+
+policy:
+  allow_implicit_invocation: true

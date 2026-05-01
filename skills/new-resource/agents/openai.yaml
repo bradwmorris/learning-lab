@@ -1,0 +1,4 @@
+interface:
+  display_name: "New Resource"
+  short_description: "Create a Learning Lab resource folder."
+  default_prompt: "Use $new-resource to add a new video, paper, book, article, podcast, tweet, or other study resource to Learning Lab."

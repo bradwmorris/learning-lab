@@ -1,0 +1,14 @@
+{
+  "name": "learning-lab",
+  "version": "1.0.0",
+  "description": "A minimal local learning copilot workspace for agent-assisted study artifacts.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

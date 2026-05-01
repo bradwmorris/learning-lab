@@ -1,0 +1,4 @@
+interface:
+  display_name: "RAH Memory"
+  short_description: "Read and write the RAH graph."
+  default_prompt: "Use $rah-memory to search the user's RAH graph when available, link Learning Lab resources to existing nodes, and propose durable learning nodes or edges when useful."
