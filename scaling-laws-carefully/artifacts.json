@@ -1,0 +1,48 @@
+[
+  {
+    "id": "20260629214942693",
+    "resourceSlug": "scaling-laws-carefully",
+    "kind": "stuck",
+    "title": "What does a log-log plot do to a power law?",
+    "marker": "Scaling Laws, Carefully / log-log plot",
+    "note": "User asked for a very simple explanation and visualization of log-log plots while reading Lilian Weng scaling laws article.",
+    "synthesis": "A log-log plot uses logarithmic spacing on both axes. Instead of equal steps meaning +1, equal steps mean multiply by the same amount, such as x10. This makes huge ranges easier to see, and it turns many power-law curves into straight lines. Accessible examples: square area, where doubling side length quadruples area; and Kleiber's law in nature, where animal metabolism scales roughly with body mass to the 3/4 power.",
+    "media": [
+      {
+        "type": "image",
+        "src": "scaling-laws-carefully/artifacts/media/log-log-plot.svg",
+        "alt": "Normal plot versus log-log plot",
+        "caption": "On log-log axes, equal spacing means multiplying by the same factor, so a curved power law can look like a straight line."
+      }
+    ],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "what is a log-log plot, explain this to me in very simple terms. visualise it"
+      },
+      {
+        "role": "assistant",
+        "content": "A log-log plot changes the ruler on both axes. On a normal ruler, equal spacing means add the same amount: 1, 2, 3, 4. On a log ruler, equal spacing means multiply by the same amount: 1, 10, 100, 1000. So a log-log plot means the x-axis uses that multiply-style ruler and the y-axis uses that multiply-style ruler too. This is useful in scaling laws because model size, data, compute, and loss can span enormous ranges. The key trick: relationships like y = x^2 look curved on normal axes, but become straight lines on log-log axes. That straight line tells you there is a consistent multiplicative pattern. Check-back: if the x-axis marks 1, 10, 100, 1000 at equal distances, what does moving one tick to the right mean: add 10, or multiply by 10?"
+      },
+      {
+        "role": "user",
+        "content": "give me another way to understand this > what is the best most easily accessible example that is not technical ML > to illustrate this phenomenon log/log scale law becomes straight"
+      },
+      {
+        "role": "assistant",
+        "content": "Use square area. If a square has side length 1, area is 1. Side 2 gives area 4. Side 4 gives area 16. Side 8 gives area 64. On normal axes this curves upward because the area jumps get bigger in raw units. On log-log axes it becomes a straight line because every same-sized step in side length means the same multiplier in area: double the side, quadruple the area. The shape is not changing; the ruler is changing so the constant multiplicative rule becomes visible. Check-back: if side length goes from 8 to 16, what should area do: add the same amount as before, or multiply by 4 again?"
+      },
+      {
+        "role": "user",
+        "content": "give another example - do websearch, is there something in nature?"
+      },
+      {
+        "role": "assistant",
+        "content": "A classic nature example is Kleiber's law: across many animals, metabolic rate scales roughly as body mass to the 3/4 power. In plain terms, bigger animals use more total energy, but not in direct proportion to their size. If an animal is 100x heavier, its metabolism is about 100^(3/4), around 32x higher, not 100x higher. On normal axes, mouse-to-elephant data looks curved and dominated by the elephant. On log-log axes, equal steps mean equal multipliers in body mass and metabolism, so the steady power-law pattern becomes roughly a straight line. Check-back: if body mass goes up 100x but metabolism goes up only about 32x, is metabolism growing slower than body size, faster than body size, or exactly in proportion?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-06-29T21:49:42.693Z",
+    "file": "scaling-laws-carefully/artifacts/20260629214942693-what-does-a-log-log-plot-do-to-a-power-law.md"
+  }
+]
