@@ -18,6 +18,23 @@ Use `rah-memory` whenever RAH context could help, when adding a resource, or whe
 
 If you notice a repeatable workflow, gap, or better process, improve an existing skill or add a new focused skill.
 
+## Multi-Device Sync
+
+The user works on Learning Lab from multiple computers/devices. Treat GitHub `main` as the shared source of truth.
+
+Before doing any Learning Lab work:
+
+- Check repo status.
+- Pull the latest `main` with `git pull --ff-only origin main`.
+- If there are local uncommitted changes that block pulling, stop and explain the conflict instead of overwriting anything.
+
+After making any file changes:
+
+- Review the diff.
+- Commit the complete working set with a clear message.
+- Push `main` back to `origin`.
+- Confirm the working tree is clean and synced.
+
 ## Philosophy
 
 - Stay synced with the resource.
