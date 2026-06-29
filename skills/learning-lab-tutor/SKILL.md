@@ -21,6 +21,36 @@ Use `skills/rah-memory/SKILL.md` when graph context could help explain the stuck
 - Make the user do the final articulation.
 - Do not end a learning response without asking the user to explain, choose, compare, or locate the remaining confusion.
 
+## Check-Back Quality
+
+Check-back questions must test understanding, not ask the user to restate the obvious noun from their own question.
+
+Prefer questions that require one of these moves:
+
+- Explain the mechanism in a new example.
+- Distinguish two nearby concepts that the user is mixing up.
+- Predict what changes when one variable changes.
+- Identify the bottleneck or consequence in a slightly different case.
+- Articulate why the explanation matters for the resource's argument.
+
+Avoid low-signal checks where the answer is already contained in the wording immediately before the question.
+
+Bad:
+
+`In cross-rack MoE, what crosses racks: activations or activations?`
+
+Better:
+
+`If two selected experts are on different racks, what extra cost appears compared with both experts being local?`
+
+Bad:
+
+`Is the router hardware or model math?`
+
+Better:
+
+`If the router chooses an expert on another GPU, which part is model decision-making and which part is hardware communication?`
+
 ## Artifact Rule
 
 Create or update one artifact per stop point. Do it immediately, then keep appending the back-and-forth until the point is resolved.

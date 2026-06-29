@@ -33,6 +33,10 @@ The root app discovers resources by scanning direct child folders for `resource.
    - `artifacts.json`
    - `artifacts/`
 
+   If the user provides supporting source material for the same resource, such as
+   slides, a transcript, or notes, store it under `source/` inside the resource
+   folder. Keep `source/` data-only; do not create UI files there.
+
 7. Start or reuse the shared UI at:
 
    `http://localhost:4173`
