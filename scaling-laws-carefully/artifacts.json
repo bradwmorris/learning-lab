@@ -1,5 +1,241 @@
 [
   {
+    "id": "20260630004350882",
+    "resourceSlug": "scaling-laws-carefully",
+    "kind": "question",
+    "title": "How do scaling laws relate to AI capital expenditure?",
+    "marker": "Scaling laws / capex connection",
+    "note": "User asked whether AI lab and hyperscaler capex is happening because scaling laws exist.",
+    "synthesis": "Scaling laws help justify AI capex because they make extra compute look like a somewhat predictable investment: more GPUs, data centers, power, and networking can translate into lower loss and better model capability if allocated well. But capex is not caused only by scaling laws; it also depends on product demand, competition, inference demand, infrastructure bottlenecks, and expectations about future returns.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "Different question: How does this relate to capital expenditure? Is capital expenditure the fact that all of these labs are raising all of this money and the hyperscalers pump in all of this money? Is this happening because of the fact that the scaling laws exist?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, scaling laws are a big part of the capex story, but not the whole story. Capex means long-lived infrastructure spending: data centers, GPUs, networking, power, cooling, land, buildings. Scaling laws make that spending more legible because they suggest that buying more compute can predictably buy lower loss or better capability, if you allocate it correctly between model size, data, and training. So labs and hyperscalers can reason: if we spend X more on compute, we may get Y improvement. But the money flood is also driven by competition, product demand, inference costs, cloud customer demand, and fear of being behind. Check-back: is capex mainly the research paper itself, or the physical infrastructure needed to turn scaling-law predictions into bigger training and serving runs?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-06-30T00:43:50.882Z",
+    "file": "scaling-laws-carefully/artifacts/20260630004350882-how-do-scaling-laws-relate-to-ai-capital-expenditure.md"
+  },
+  {
+    "id": "20260630003813599",
+    "resourceSlug": "scaling-laws-carefully",
+    "kind": "question",
+    "title": "What is the main claim of the scaling laws article?",
+    "marker": "Scaling Laws, Carefully / main claim",
+    "note": "User asked for the central thesis of Lilian Weng Scaling Laws, Carefully.",
+    "synthesis": "The article’s fuller claim is not merely that scaling laws exist. It argues that deep-learning loss often follows predictable power-law-like relationships with compute, data, and model size, but fitting and using those laws is subtle. The practical value is compute allocation; the caution is that the fit depends on assumptions, regimes, loss floors, and which variables are allowed to vary.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "What's the main claim being made in the scaling laws article?"
+      },
+      {
+        "role": "assistant",
+        "content": "The main claim is: deep-learning loss is not random as you scale. It tends to improve in a predictable way as you increase compute, data, and model size. That predictability matters because it lets researchers ask a practical planning question: with a fixed compute budget, should we spend it on a bigger model, more data, or more training? In other words, scaling laws turn “make it bigger and hope” into “estimate the best tradeoff.” Check-back: in this article, are scaling laws mainly about explaining why intelligence emerges, or about predicting how loss changes when compute/data/model size change?"
+      },
+      {
+        "role": "user",
+        "content": "But isn't the article about more than this? Isn't it more about the fact that it's not easy to fit?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, that is the sharper reading. The article is not just “scaling laws exist.” It is more like: scaling laws are powerful because loss often follows predictable curves, but fitting those curves correctly is delicate. You have to decide which variables matter, where the irreducible loss floor is, what compute/data/model-size regime you are in, and whether the observed curve will extrapolate. “Carefully” is doing real work in the title: the useful claim is not just that bigger is better, but that prediction and compute allocation require careful modeling. Check-back: what makes this article different from a simple “more data and bigger models improve loss” claim?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-06-30T00:38:13.599Z",
+    "file": "scaling-laws-carefully/artifacts/20260630003813599-what-is-the-main-claim-of-the-scaling-laws-article.md"
+  },
+  {
+    "id": "20260630003010561",
+    "resourceSlug": "scaling-laws-carefully",
+    "kind": "stuck",
+    "title": "What did Hestness et al. measure about data, model size, and loss?",
+    "marker": "Early empirical studies / Hestness et al. 2017",
+    "note": "User asked for a simpler explanation of Hestness et al. 2017 and the grid-search setup connecting dataset size, best model size, and loss.",
+    "synthesis": "Encoding a pattern means the model’s numeric weights have been adjusted so a regularity in the data changes future predictions. The pattern is not stored as a sentence or a readable rule; it is distributed across many weights. More parameters give the model more degrees of freedom to represent many overlapping regularities.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "I don't understand this. One of the earliest empirical studies by Hestness et al. (2017) explained the relationship between generalization error, model size and data. For a given training data size, they identified the best-fit model size via grid search and then plotted loss against training dataset size. Across four different domains in deep learning... a recurring pattern was observed."
+      },
+      {
+        "role": "assistant",
+        "content": "This is saying: they stopped doing only toy theory and actually ran deep-learning experiments. The hard part is that dataset size and model size interact. If the dataset is tiny, a huge model may overfit. If the dataset is huge, a tiny model may be too weak. So for each amount of data, they tried a range of model sizes, picked the best one, then plotted the best achievable loss for that data amount. The result: across several domains, the best loss got better in a regular power-law-like way as data increased. Check-back: why do you think they had to pick the best model size for each dataset size instead of using one fixed model for every dataset size?"
+      },
+      {
+        "role": "user",
+        "content": "I don't understand model size. Make this more tangible for me. Parameters? I don't understand how/why. With the model size, I'm assuming this is what they're trying to work out. Like how many parameters should the model have based on the compute and data. Is this why they run the small experiments?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes: model size usually means number of learned parameters, roughly the number of adjustable knobs inside the network. A tiny model has fewer knobs, so it may be too simple to capture the pattern. A huge model has many knobs, so it can fit richer patterns, but it needs enough data and compute to use those knobs well. The small experiments are like a pilot study: train several model sizes on several dataset sizes, measure loss, and infer the curve. Then you can predict a good allocation: for this much compute/data, do we need a bigger model, more data, or are we wasting one side? Tangible analogy: don't buy a giant warehouse if you only have one shelf of inventory, and don't use a tiny closet if you have a warehouse worth of inventory. Check-back: if you double the dataset but keep a very tiny model, what might become the bottleneck: data or model capacity?"
+      },
+      {
+        "role": "user",
+        "content": "I'm still not quite making the link here between these things. How is the data fed into the weights during training? What's the difference between weights and the parameters? And what are we talking about here? Are we talking about language models and transformers or just any kind of neural network? What's the difference between a neural network and a transformer?"
+      },
+      {
+        "role": "assistant",
+        "content": "Parameters are all the learned numbers in a model. Weights are the main kind of parameter; people often use “weights” and “parameters” almost interchangeably. Data is not poured into weights directly. A training example goes through the network, the model makes a prediction, loss measures how wrong it was, and backpropagation nudges the weights slightly so next time the prediction is less wrong. This section is about neural networks broadly, not only language models. A transformer is one architecture/type of neural network, especially good for sequences like text. A language model is a model trained to predict language; modern LLMs are usually transformer neural networks. Check-back: in training, does the data become a stored weight directly, or does it create an error signal that updates the weights?"
+      },
+      {
+        "role": "user",
+        "content": "Give me a more tangible example to understand the difference between transformer and LLM and other neural net."
+      },
+      {
+        "role": "assistant",
+        "content": "Think of “neural network” like “vehicle.” It is the broad category. A CNN is like a camera-focused vehicle, good at images. An RNN is like an older sequence vehicle, reading one step at a time. A transformer is a newer sequence vehicle with attention, good at looking across many words/tokens at once. An LLM is not the vehicle design; it is the job/product: a large model trained on language to predict text. Most modern LLMs use transformer vehicles. So: neural network = broad machine type; transformer = specific architecture; LLM = language-trained model, usually built with a transformer. Check-back: is “transformer” describing what the model is trained to do, or the internal architecture it uses?"
+      },
+      {
+        "role": "user",
+        "content": "Back to Hestness et al. (2017). Help me put this in perspective: when was this realised? Pre-language models? What does it mean “empirical”?"
+      },
+      {
+        "role": "assistant",
+        "content": "Hestness et al. was late 2017: before the modern LLM scaling era, but not before language models entirely. Neural language models already existed, and the Transformer paper was also 2017, but this was before GPT-3-style “scale a transformer LM and watch broad capabilities emerge” became the dominant story. “Empirical” means they did not just prove a toy theorem; they ran actual experiments, measured real losses, and fit curves to the observations. In perspective: Amari-style work says “theory suggests learning curves can follow power laws”; Hestness says “when we train real deep nets across domains, we observe similar predictable curves.” Check-back: is empirical evidence closer to a mathematical proof, or closer to measured experimental evidence?"
+      },
+      {
+        "role": "user",
+        "content": "I have no idea what this means: Model improvements shift the error curve but do not seem to affect the power-law exponent."
+      },
+      {
+        "role": "assistant",
+        "content": "This means better model designs make performance better at every data size, but they may not change the basic rate at which more data helps. Picture two parallel-ish straight lines on a log-log plot. A better architecture moves the whole line downward: lower error for the same amount of data. But the slope stays about the same: each 10x increase in data gives a similar proportional improvement as before. “Shift the curve” = same data, lower error. “Does not affect the exponent” = the diminishing-returns slope stays similar. Check-back: if a new model architecture lowers error at every dataset size but the line has the same slope, did it change the baseline performance, the scaling rate, or both?"
+      },
+      {
+        "role": "user",
+        "content": "Can we conceptualise this some other way? Think deeply about this, ie: how good is the model at identifying image of ..."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. Imagine the task is “identify whether an image contains a cat.” More training images improve the model because it sees more examples: cats in sunlight, cats sideways, blurry cats, cats partly hidden, dogs that look cat-like. The power-law exponent is like the learning pace from added examples: when you 10x the image dataset, how much does error tend to drop? A model improvement, like a better architecture, is like giving the learner better eyes or a better visual strategy. It makes the model more accurate at every dataset size, so the whole curve shifts downward. But if the exponent does not change, then extra images still buy improvement at roughly the same proportional pace. Better eyes, same learning-rate-from-more-examples. Check-back: in the cat-image example, what would represent “curve shifted down”: needing fewer images to reach the same accuracy, or each 10x more images suddenly becoming more valuable than before?"
+      },
+      {
+        "role": "user",
+        "content": "This is not clearly explaining to me “scaling laws”. Are you saying that these are not scaling laws? If you were just giving data, if you're just giving more data, it's not scaling laws in action. But if you fix something else, then you do trigger the scaling laws?"
+      },
+      {
+        "role": "assistant",
+        "content": "Good correction: giving more data can absolutely be studying a scaling law. A scaling law is a measured relationship between “how much of X” and “what happens to Y” as X scales. If X is dataset size and Y is error, then “error falls predictably as data increases” is a data-scaling law. The reason people fix or optimize other variables is experimental cleanliness. If model size changes at the same time as data, you do not know whether error improved because of more data or a bigger model. So Hestness asks: for each data size, choose a sensible/best model size, then measure how loss scales with data. Fixing/controlling variables does not trigger the scaling law; it reveals the relationship more cleanly. Check-back: if we double data and model size at the same time and loss improves, why is it harder to identify the scaling law?"
+      },
+      {
+        "role": "user",
+        "content": "But isn't the entire surprising thing with scaling laws in LMs the fact that the loss is predictable at “x” scale and if you don't improve all three things, it doesn't improve at “x” rate?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, that is much closer to the modern LM point. Older learning-curve work can study one slice: hold things controlled and ask how loss changes with data. Modern LM scaling laws are more about the joint recipe: loss is predictable as compute, model size, and data scale together, but only if they are balanced. If you increase compute but keep the model too small, model capacity bottlenecks. If you increase model size but not data, data bottlenecks. If you increase data/model but not training compute, you cannot actually train them enough. So the surprising LM claim is not merely “more data helps”; it is “there is a predictable surface/tradeoff over compute, parameters, and tokens, and optimal progress requires allocating compute across them correctly.” Check-back: in that modern LM framing, are we looking for a single line like data -> loss, or a surface/tradeoff among compute, model size, and data?"
+      },
+      {
+        "role": "user",
+        "content": "Is it a fact that it is easy to predict what happens if we just add more data? i.e. is it easy to predict the loss of adding more data? Like, what is that loss? And is it diminishing returns and even though it's diminishing returns, it's still possible to predict the rate of improvement?"
+      },
+      {
+        "role": "assistant",
+        "content": "Careful: not “easy” in the everyday sense, but often possible if you have enough measurements in the right regime. Loss is the model’s error objective: a number measuring how wrong its predictions are on training or validation data. For language models it is often cross-entropy/negative log likelihood: lower means the model assigns higher probability to the correct next token. Adding more data usually has diminishing returns: each extra 10x data helps, but less in absolute terms than earlier data. A scaling law says the diminishing returns can still be predictable: not “data improves loss by a fixed amount,” but “data improves loss by a stable proportional/power-law rate.” The catch is you must fit the curve carefully and the prediction can break if the regime changes or another bottleneck appears. Check-back: does predictable improvement mean each extra dataset chunk gives the same absolute loss drop, or that the rate of diminishing returns follows a stable pattern?"
+      },
+      {
+        "role": "user",
+        "content": "So if just increasing data, the log-log wouldn't be straight?"
+      },
+      {
+        "role": "assistant",
+        "content": "It could be straight. If you plot data size on the x-axis and loss or excess loss on the y-axis, and the relationship follows a power law, then that one-variable data-scaling curve can be straight on a log-log plot. The issue is not “only data means not straight.” The issue is whether other bottlenecks are controlled. If the model is too small, more data may stop helping much and the line can bend/flatten. If the model size is chosen well for each data size, the data-vs-loss relationship may show a cleaner straight log-log pattern. Check-back: what would make the data-only curve bend: the absence of model scaling by itself, or hitting a bottleneck like model capacity or loss floor?"
+      },
+      {
+        "role": "user",
+        "content": "I still think I'm not thinking about this the right way. So, is it true that the fact that you can predict the loss by adding more data into the training run for a model? This is not surprising or that interesting. But the surprising and interesting part is when you add in the parameter and compute part. Is that the right way to think about it? That's when it becomes interesting and has big implications?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, that is a good way to rank the surprise, with one caveat. Data-only predictability is still scientifically useful, but it is less world-changing by itself. The big modern implication comes when loss is predictable across the joint system: dataset size, parameter count, and compute budget. That turns scaling from “more data tends to help” into an engineering/economic planning rule: given a compute budget, how many parameters and tokens should we train on, and what loss should we expect? That is why it connects to frontier labs and capex. Check-back: why does adding compute and parameter count make this more useful for planning than a data-only curve?"
+      },
+      {
+        "role": "user",
+        "content": "No, let's stick on this because I don't understand this fully. I don't understand what it means to learn the useful patterns from it. Make this more tangible for me to understand what's actually happening. Tell me exactly what's being fed in. I understand what this might look like if we're talking about a transformer: feeding in examples of sentences and the model trying to learn to predict words. But I'm still not fully understanding this."
+      },
+      {
+        "role": "assistant",
+        "content": "For a language model, what is fed in is token sequences. Example input: “The cat sat on the”. Target: “mat”. The model converts tokens into numbers, runs them through layers using its current weights, and outputs probabilities for the next token. If it gives “mat” low probability, loss is high. Training adjusts weights so similar contexts make “mat”-like completions more likely next time. “Learning useful patterns” means weights gradually encode reusable regularities: grammar, associations, facts, styles, code syntax, long-range dependencies. The data does not get copied into one weight; many examples push many weights so the model’s probability patterns improve. If the model is too small, it has too few adjustable knobs to represent all the regularities in a huge dataset. Check-back: in the sentence example, what is the target signal that tells the model its current weights are wrong?"
+      },
+      {
+        "role": "user",
+        "content": "Current weights: I just don't understand what current weights are. Show me. I don't understand how the weights can translate into predictions. Is “The cat sat on the” actually what is fed in, like a sentence with something missing? I thought the entire data is fed in and as part of training something is ablated."
+      },
+      {
+        "role": "assistant",
+        "content": "Weights are just numbers in matrices. A toy model might have numbers saying the current context features should add +2.1 to the score for “mat”, +0.4 to “dog”, and -1.2 to “banana”. The model turns tokens into numeric vectors, multiplies by weight matrices, and produces scores for possible next tokens. Those scores become probabilities. In next-token training, the data is usually a continuous text stream, but it is split into chunks. The model sees a prefix and predicts the next token at every position. Nothing has to be ablated manually; the target is already the next token in the sequence. For “The cat sat on the mat”, training examples inside it include “The” -> “cat”, “The cat” -> “sat”, “The cat sat on the” -> “mat”. Check-back: is the blank created by deleting data, or by asking the model to predict the next token from the prefix?"
+      },
+      {
+        "role": "user",
+        "content": "Based on the words so far, what comes next? But it was my understanding that it's basically assigning a probability to every single word in an alphabet?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, close. A language model assigns a probability to every possible next token in its vocabulary, not every word in an alphabet. The vocabulary contains tokens: common words, word pieces, punctuation, spaces, and sometimes whole words. For the prefix “The cat sat on the”, the model produces a huge list of scores, one per token: “mat”, “floor”, “table”, “dog”, etc. Softmax turns those scores into probabilities that sum to 100%. Training compares the probability assigned to the actual next token, “mat”, against the correct answer and updates weights. Check-back: is the model choosing from letters A-Z directly, or from a learned vocabulary of tokens?"
+      },
+      {
+        "role": "user",
+        "content": "Make this more concrete for me to understand: What does an actual training look like? What data is being fed in, what sentences are being fed in, how are the weights updated?"
+      },
+      {
+        "role": "assistant",
+        "content": "An actual language-model training step uses a batch of token chunks from text. Example chunk: “The cat sat on the mat. It was tired.” The tokenizer turns it into token IDs. The model is asked to predict the next token at every position: “The” predicts “cat”, “The cat” predicts “sat”, and so on. The current weights produce probabilities for each next token. Loss is high where the true next token got low probability. Backpropagation computes which weights pushed probabilities in the wrong direction. The optimizer then changes the weights a tiny amount, e.g. weight 0.0182 becomes 0.0185. One step barely matters; billions of repeated steps make the weights encode useful patterns. Check-back: in one training step, are weights replaced with the sentence, or nudged slightly based on prediction errors?"
+      },
+      {
+        "role": "user",
+        "content": "Bigger model means more adjustable weights to encode patterns. I'm still not fully grokking the encoding patterns part."
+      },
+      {
+        "role": "assistant",
+        "content": "Think of “encoding a pattern” as changing the model’s internal numbers so a pattern affects future predictions. If many training examples say “sat on the” is often followed by “mat”, then updates push some weights so that contexts like “sat on the” raise the score for “mat” and related tokens. No single weight means “mat after cat”; the pattern is distributed across many weights. A bigger model has more numeric degrees of freedom, so it can hold more overlapping patterns: grammar patterns, factual associations, code patterns, style patterns. Check-back: does encoding a pattern mean storing a sentence verbatim, or changing weights so similar future contexts produce better probabilities?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-06-30T00:30:10.561Z",
+    "file": "scaling-laws-carefully/artifacts/20260630003010561-what-did-hestness-et-al-measure-about-data-model-size-and-loss.md"
+  },
+  {
+    "id": "20260630002604076",
+    "resourceSlug": "scaling-laws-carefully",
+    "kind": "stuck",
+    "title": "What are the Amari learning curves saying in simple terms?",
+    "marker": "Early days: ML loss predictability / Amari et al. 1992",
+    "note": "User asked for a simpler explanation of the early ML loss predictability section and the four Amari learning-curve cases.",
+    "synthesis": "Amari et al. are using a simplified theoretical model of learning, not a modern neural net: a toy classification setup where they can derive how generalization error changes with more training examples. A power law is the mathematical curve; a scaling law is the claim that a system follows that curve as something scales. Power-law learning curves are predictable because they show a stable diminishing-returns pattern, often straight on log-log axes.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "I don't understand this part. Make more simple. Early days: ML loss predictability... Amari et al. (1992) derived four types of learning curves... deterministic/noiseless/unique solution, deterministic/noiseless/multiple equivalent solutions, deterministic/noisy data, stochastic/noisy data... All four types follow a power law."
+      },
+      {
+        "role": "assistant",
+        "content": "This section is saying: before modern deep-learning scaling laws, people already noticed a simpler version of the same pattern. If you train on more examples, the model's error tends to fall in a predictable mathematical shape. Amari et al. studied four toy situations. Clean data + one right answer: learning improves steadily. Clean data + many equivalent right answers: learning can improve faster because the model only needs to land anywhere on a good region, not one exact point. Noisy data: learning is harder because some examples are misleading or inconsistent. Stochastic learner + noisy data: even with lots of data, there may be a leftover error floor the learner cannot remove. The important point: all four are power-law-ish curves. More data helps, but with diminishing returns. Check-back: which part changes across the four cases: the basic idea that more data helps, or the speed/floor of how much it helps?"
+      },
+      {
+        "role": "user",
+        "content": "What is the model they're using? My understanding correctly here that the power law is different to a scaling law is that what you're trying to say here that the power law doesn't mean that it's predictable because it's not a straight line on a log-log plot for these earlier examples like more data helps but each extra chunk of data helps less than the previous chunk"
+      },
+      {
+        "role": "assistant",
+        "content": "The “model” here is not a modern language model. It is a simplified theoretical learning setup: basically a toy classifier where they can mathematically study how generalization error changes as the number of training examples grows. A power law is the mathematical shape, like error = irreducible floor + constant * data^(-alpha). A scaling law is the empirical/theoretical claim that some real system follows that kind of shape as you scale a variable. Power-law behavior is predictable because it has a stable pattern; on normal axes it curves, while on log-log axes the reducible-error part becomes a straight line. “More data helps, but each extra chunk helps less” is exactly the diminishing-returns intuition. Check-back: if the curve is straight on a log-log plot, does that mean raw error drops by the same absolute amount each time, or by a consistent multiplier pattern?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-06-30T00:26:04.076Z",
+    "file": "scaling-laws-carefully/artifacts/20260630002604076-what-are-the-amari-learning-curves-saying-in-simple-terms.md"
+  },
+  {
     "id": "20260630001900415",
     "resourceSlug": "scaling-laws-carefully",
     "kind": "question",
