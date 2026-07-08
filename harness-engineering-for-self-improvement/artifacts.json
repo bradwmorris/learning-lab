@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260708232449000",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "What is joint optimization with model weights?",
+    "marker": "Section: Joint Optimization with Model Weights",
+    "note": "User asked what the section title means after studying harness and evolutionary search.",
+    "synthesis": "Joint optimization with model weights means improving two layers in the same loop: the harness around the model and the model parameters themselves. Earlier examples usually keep the base model fixed and change prompts, memory, workflow, tools, or harness code. Joint optimization asks whether the system should sometimes update the harness and sometimes train or adapt the model weights, based on feedback from recent task trajectories.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "Joint Optimization with Model Weights - what is?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is the section where Weng says: until now, most examples improved the non-parametric layer around the model, meaning the harness. Joint optimization means the loop can improve both the harness and the model weights. Harness update means changing external machinery: prompts, tools, memory, workflow, permissions, evaluators. Weight update means changing the model itself through training, fine-tuning, continual learning, or test-time adaptation. The SIA example has a feedback agent that looks at recent trajectories and chooses which kind of update is needed next: change the harness, or update the model weights. Check-back: if the agent fails because it used the wrong workflow, which layer should change? If it fails because the model lacks the skill even with the right workflow, which layer should change?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-08T23:24:49.000Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260708232449000-what-is-joint-optimization-with-model-weights.md"
+  },
+  {
     "id": "20260708232354000",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
