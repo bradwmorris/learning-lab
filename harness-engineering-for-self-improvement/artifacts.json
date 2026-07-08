@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260708220804389",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "How are ACE, MCE, and Meta-Harness different?",
+    "marker": "Context Engineering / ACE vs MCE vs Meta-Harness",
+    "note": "User asked whether ACE, MCE, and arXiv:2603.28052 are different things.",
+    "synthesis": "Yes, they are related but different levels. ACE optimizes the context content: it maintains a structured playbook of useful context items. MCE optimizes the method for constructing context: it evolves skills/recipes for finding, selecting, filtering, and formatting context. Meta-Harness goes broader and optimizes harness code itself: the source code that decides what to store, retrieve, and present to the model. The progression is context content, context-building recipe, then broader harness code.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "is this a different thing again?\n\nso there's ace, mce and https://arxiv.org/abs/2603.28052"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. They are three related ideas at different levels. ACE: optimize the context itself. It keeps a cleaner playbook of useful lessons/bullets, instead of dumping everything into the prompt. MCE: optimize the recipe for building context. It asks: what skill/process should we use to search, select, filter, format, and update context? Meta-Harness: optimize the harness code more broadly. The arXiv paper is Meta-Harness: End-to-End Optimization of Model Harnesses. Its target is not just context notes or context recipes; it searches over the code that determines what information to store, retrieve, and present to the model. So the ladder is: ACE = better context memory; MCE = better method for making context memory; Meta-Harness = better harness code around the model, including context management. Check-back: which one is broadest: ACE, MCE, or Meta-Harness?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-08T22:08:04.389Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260708220804389-how-are-ace-mce-and-meta-harness-different.md"
+  },
+  {
     "id": "20260708220157406",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "stuck",
