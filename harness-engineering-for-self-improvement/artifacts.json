@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260708214822012",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "What are code diffs and paper summaries as agent memory?",
+    "marker": "Pattern 2: File System as Persistent Memory / code diffs and paper summaries",
+    "note": "User asked how code diffs are commonly stored and what paper summaries means in the file-memory examples.",
+    "synthesis": "Code diffs are commonly stored as git commits, patch/diff files, pull requests, or logs from commands like git diff and git show. They preserve what changed, where it changed, and sometimes why. Paper summaries are short structured notes about research papers: the problem, core idea, method, results, limitations, and relevance to the current task. In a harness, both are durable artifacts the model can re-read instead of keeping every detail in context.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "what are common ways to store code diffs? \n\nand 'paper summarries' meaning what?"
+      },
+      {
+        "role": "assistant",
+        "content": "Common ways to store code diffs: git commits, which are the normal durable record of changes; patch files, such as `fix-bug.patch`, which are portable diff files; pull requests, which store the diff plus discussion and review; `git diff` logs saved to files, useful during experiments; and structured change notes, like `changed X because Y, tests Z passed`. A code diff means: the before/after changes to code, usually line-by-line. Paper summaries means concise notes about papers the agent has read. Not a full copy of the paper. More like: what problem does this paper solve, what is the core method, what did it find, what are the limitations, and why does it matter for this task? In long research workflows, the agent might read 30 papers. It should not keep all paper text in context; it should save useful summaries and pull them back when needed. Check-back: if an agent reads a paper about a new evaluation method, should it save the whole PDF in prompt context, or save a compact summary with the key method, findings, and relevance?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-08T21:48:22.012Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260708214822012-what-are-code-diffs-and-paper-summaries-as-agent-memory.md"
+  },
+  {
     "id": "20260708214652318",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
