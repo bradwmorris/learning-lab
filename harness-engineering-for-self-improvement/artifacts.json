@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260708212850643",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "Is the deployment system the same thing as the harness?",
+    "marker": "Introduction / quote: deployment system",
+    "note": "User asked whether Weng's phrase deployment system means the harness or whether the harness is one part of it.",
+    "synthesis": "The deployment system is the broader real-world layer that turns a base model into a usable product or agent. A harness is one important part of that layer: it controls how the model is prompted, given tools, looped through tasks, managed with context, checked, and connected to artifacts. The deployment system also includes serving infrastructure, product UI, permissions, monitoring, evaluation, logging, routing, safety systems, and user workflows.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "she says deployment system?\n\n“deployment system”\n\nis this the harness - or harness is just one part?"
+      },
+      {
+        "role": "assistant",
+        "content": "The harness is one major part of the deployment system, but not the whole thing. Think of three layers: base model = the trained weights; harness = the runtime wrapper that decides prompts, tools, planning loops, context, memory, artifacts, checks, and retries; deployment system = the whole setup that makes the model useful in the world, including the harness plus serving infrastructure, product UI, permissions, logging, evals, monitoring, safety controls, routing, and human workflows. In this article, Weng is zooming in on the harness because it is the part of deployment that can make a model much more capable without changing the model weights. Check-back: if Codex uses GPT-5, a terminal, file edits, git, tests, permissions, and this Learning Lab memory, which part is the base model and which parts are harness/deployment around it?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-08T21:28:50.643Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260708212850643-is-the-deployment-system-the-same-thing-as-the-harness.md"
+  },
+  {
     "id": "20260708024934789",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
