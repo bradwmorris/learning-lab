@@ -6,7 +6,7 @@
 
 ## Summary
 
-The article's sharper crux is that harness engineering may be the practical near-term substrate for recursive self-improvement. Because harnesses are code, a system can edit prompts, memory rules, workflows, tools, evals, and optimizer logic, test those changes, keep improvements, and become better at future improvement without directly rewriting model weights.
+The article's sharper crux is that harness engineering may be the practical near-term substrate for recursive self-improvement. Because harnesses are code, a system can edit prompts, memory rules, workflows, tools, evals, and optimizer logic, test those changes, keep improvements, and become better at future improvement without directly rewriting model weights. The user correctly named tools, prompts, and workflow as harness-change categories, but still needs to make them concrete mechanisms.
 
 ## Interaction
 
@@ -21,3 +21,17 @@ Yes. The sharper crux is that harness engineering may be the practical near-term
 ### user
 
 ok - next question, really help me understand this
+
+### assistant
+
+Imagine the base model is frozen. It cannot learn new weights. A coding agent still gets better over time because its harness changes. What exactly could change in the harness that would make the same model better at future coding tasks? Give me three concrete changes, not abstractions.
+
+### user
+
+better tools
+better prompts
+better workflow
+
+### assistant
+
+That is directionally right, but still at label level. Make it concrete: for each one, name the actual change to the coding agent. For example, not "better tools" but a specific new tool or tool policy; not "better workflow" but a specific sequence change.

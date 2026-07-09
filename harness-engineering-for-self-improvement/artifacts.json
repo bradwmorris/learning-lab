@@ -6,7 +6,7 @@
     "title": "Why might the harness be the path to RSI?",
     "marker": "Final synthesis grill / crux of article",
     "note": "User sharpened the article's TLDR from harnesses being useful to harnesses potentially being the tractable path to recursive self-improvement.",
-    "synthesis": "The article's sharper crux is that harness engineering may be the practical near-term substrate for recursive self-improvement. Because harnesses are code, a system can edit prompts, memory rules, workflows, tools, evals, and optimizer logic, test those changes, keep improvements, and become better at future improvement without directly rewriting model weights.",
+    "synthesis": "The article's sharper crux is that harness engineering may be the practical near-term substrate for recursive self-improvement. Because harnesses are code, a system can edit prompts, memory rules, workflows, tools, evals, and optimizer logic, test those changes, keep improvements, and become better at future improvement without directly rewriting model weights. The user correctly named tools, prompts, and workflow as harness-change categories, but still needs to make them concrete mechanisms.",
     "media": [],
     "interaction": [
       {
@@ -20,6 +20,18 @@
       {
         "role": "user",
         "content": "ok - next question, really help me understand this"
+      },
+      {
+        "role": "assistant",
+        "content": "Imagine the base model is frozen. It cannot learn new weights. A coding agent still gets better over time because its harness changes. What exactly could change in the harness that would make the same model better at future coding tasks? Give me three concrete changes, not abstractions."
+      },
+      {
+        "role": "user",
+        "content": "better tools\nbetter prompts\nbetter workflow"
+      },
+      {
+        "role": "assistant",
+        "content": "That is directionally right, but still at label level. Make it concrete: for each one, name the actual change to the coding agent. For example, not \"better tools\" but a specific new tool or tool policy; not \"better workflow\" but a specific sequence change."
       }
     ],
     "transcript": "",
