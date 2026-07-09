@@ -6,7 +6,7 @@
 
 ## Summary
 
-The paradox is that the story people tell says open source is winning, but one important enterprise metric says open source share is falling. That does not necessarily mean open source is losing everywhere. Menlo's 11% from 19% claim is directionally supported for U.S. enterprise foundation-model API market share, but it is not a clean measure of all enterprise AI spend. The reconciliation is scope: closed models dominate enterprise API dollars and regulated procurement, while open models are growing in developer ecosystems, startups, cost-sensitive workloads, and self-hosted/specialized production.
+The paradox is that the story people tell says open source is winning, but one important enterprise metric says open source share is falling. Zhang's resolution is maturity: a use case means a specific business job AI is deployed to do, like customer support triage, coding assistance, invoice extraction, sales email drafting, legal review, or internal search. Most enterprise use cases are still immature, so teams buy frontier closed models while discovering the workflow. Mature, repeated, high-volume use cases are where open models can be fine-tuned and optimized.
 
 ## Media
 
@@ -34,3 +34,19 @@ Yes, that's the basic paradox, with one precision: the numbers do not prove open
 The puzzle is why both can be true at once. The answer is scope and maturity: new enterprise use cases spend on frontier closed models, while mature or cost-sensitive workloads are where open models tend to grow.
 
 Check-back: if open models are used heavily for cheap high-volume tasks, but closed models are used for expensive frontier tasks, which side might win on usage volume and which side might win on dollar spend?
+
+### user
+
+Enterprise as a whole is at the beginning of the maturity curve? What exactly does he mean by "use cases"?
+
+### assistant
+
+A use case is a specific business job or workflow where AI is being applied, not AI in general.
+
+Examples: answering customer support tickets, summarizing sales calls, reviewing contracts, generating code, extracting invoice fields, routing insurance claims, searching internal documents, or drafting marketing copy.
+
+When Zhang says enterprise AI is early in the maturity curve, he means most of these workflows are still in discovery: teams are figuring out the inputs, desired outputs, edge cases, evaluation criteria, and ROI. In that stage they buy powerful frontier models because flexibility matters.
+
+Once the workflow is stable and high-volume, they can fine-tune a smaller open model to do that narrow job quickly and cheaply.
+
+Check-back: pick one use case, like customer support. What would make it mature enough to replace a frontier model with a smaller fine-tuned open model?
