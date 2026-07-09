@@ -1,0 +1,25 @@
+[
+  {
+    "id": "20260709014746000",
+    "resourceSlug": "sia-self-improving-ai-with-harness-weight-updates",
+    "kind": "question",
+    "title": "What is SIA and why does it matter for harness engineering?",
+    "marker": "Background research / full-paper map",
+    "note": "User asked for deep background web research on arXiv:2605.27276 and surrounding supporting research.",
+    "synthesis": "SIA tries to combine two previously separate self-improvement levers: harness/scaffold updates with model weights fixed, and test-time training/RL with the harness fixed. Its Feedback-Agent reads trajectories and metrics, then chooses whether to rewrite the task agent's scaffold or trigger a LoRA/RL weight update. The key claim is that harness updates improve how the model searches and acts, while weight updates internalize domain-specific patterns that no prompt or scaffold can easily instill. The evidence is interesting but should be read cautiously because it depends on verifier-shaped tasks and Weng flags confounds in the experiments.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "go and do deep background websearch on this > along with the surrounding information and dig right into the supporting research >\n\nhttps://arxiv.org/abs/2605.27276\n\nso that I really understand this deeply"
+      },
+      {
+        "role": "assistant",
+        "content": "SIA sits at the intersection of harness self-improvement systems such as DGM, Meta-Harness, ADAS, and Self-Harness, and weight-update systems such as TTT, TTRL, TTT-Discover, STaR, and self-play fine-tuning. The core test is always: what object is being improved, what feedback selects the improvement, and whether the verifier is strong enough to avoid Goodharting."
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T01:47:46.000Z",
+    "file": "sia-self-improving-ai-with-harness-weight-updates/artifacts/20260709014746000-what-is-sia-and-why-does-it-matter-for-harness-engineering.md"
+  }
+]
