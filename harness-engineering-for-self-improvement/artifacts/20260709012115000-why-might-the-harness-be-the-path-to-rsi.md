@@ -6,7 +6,7 @@
 
 ## Summary
 
-The article's sharper crux is that harness engineering may be the practical near-term substrate for recursive self-improvement. Because harnesses are code, a system can edit prompts, memory rules, workflows, tools, evals, and optimizer logic, test those changes, keep improvements, and become better at future improvement without directly rewriting model weights. The user correctly named tools, prompts, and workflow as harness-change categories, but still needs to make them concrete mechanisms.
+The article's sharper crux is that harness engineering may be the practical near-term substrate for recursive self-improvement. The harness includes editable parts around the model: tools, scripts, workflows, evals, memory, prompts, permissions, and logs. The RSI implication appears only when those editable parts are inside a loop: run the agent, observe failures, propose harness changes, evaluate them, keep the better harness, then use that improved harness for future improvement.
 
 ## Interaction
 
@@ -35,3 +35,15 @@ better workflow
 ### assistant
 
 That is directionally right, but still at label level. Make it concrete: for each one, name the actual change to the coding agent. For example, not "better tools" but a specific new tool or tool policy; not "better workflow" but a specific sequence change.
+
+### user
+
+i don't understand what you're getting at here with your question.
+
+the harness is the stuff surrounding the model that can be updated right? so it's the tools, scripts/workflows, evals, memory.
+
+so improving any of this stuff should improve? i gues im not understanding > is this where we're talking about loops etc?
+
+### assistant
+
+Yes: this is where the loop matters. A harness part changing once is just engineering. RSI-shaped harness improvement means the system can use outcomes from its own work to change the harness, evaluate the change, keep it, and thereby become better at the next improvement cycle.
