@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "20260709122455018",
+    "resourceSlug": "everyone-is-wrong-about-open-source-ai-in-the-enterprise",
+    "kind": "insight",
+    "title": "How should an audio tutor walk through this article?",
+    "marker": "Whole article",
+    "note": "Prompt for section-by-section audio tutoring with near-verbatim reading.",
+    "synthesis": "Use the tutor prompt to read each logical section of Jesse Zhang's article almost verbatim, then add brief plain-English context and ask whether the user is ready to continue.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "Create a prompt that breaks this article into logical sections, adds more context/colour, and has another agent talk me through each section in plain terms over audio. Ensure every section is read almost verbatim."
+      },
+      {
+        "role": "assistant",
+        "content": "Created a resource-level tutor prompt that preserves the article section by section, instructs the next agent to read each section almost verbatim before explaining it, and requires an explicit ready-to-move-on check after every section."
+      }
+    ],
+    "createdAt": "2026-07-09T02:24:55.018Z",
+    "file": "everyone-is-wrong-about-open-source-ai-in-the-enterprise/artifacts/20260709122455018-how-should-an-audio-tutor-walk-through-this-article.md"
+  }
+]
