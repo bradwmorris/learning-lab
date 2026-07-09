@@ -6,7 +6,7 @@
 
 ## Summary
 
-The user's interpretation is basically right: Zhang's paradox is narrative versus measured enterprise share, and his resolution is that new use cases start on frontier models while mature use cases can migrate toward specialized open models. The main stress-test correction is that migration is not automatic. It only makes sense when the use case is stable, high-volume, valuable, data-rich, and worth the fine-tuning/infrastructure effort.
+Zhang's explicit article claim is stronger than a cautious reading: if his maturity-curve explanation is right, every use case being prototyped on a frontier model today is a future open-source migration. He frames frontier labs as owning discovery and open source as increasingly owning production. The nuance is not "only some" in that sentence; the nuance comes immediately after, where he says migration will take many years and requires finalized agent shape, high ROI, scale, fine-tuning expertise, and enough data.
 
 ## Media
 
@@ -66,3 +66,35 @@ A use case needs to become stable enough that the company knows the input distri
 The article's strongest claim is not that closed models lose every mature use case; it is that frontier models dominate discovery, while open models become more attractive in production when specialization, latency, and unit economics matter.
 
 Check-back: what are two conditions that would make a frontier-to-open migration not worth it?
+
+### user
+
+Tell me exactly what his claim is from the article. I read it as if he was saying closed models lost mature use cases. I didn't hear him say only some, or nuanced. If he did, point me to those now.
+
+### assistant
+
+You are right to challenge the softer phrasing. In the article, Zhang's explicit claim is broad:
+
+> "every use case being prototyped on a frontier model today is a future open source migration."
+
+He also says:
+
+> "The frontier labs will keep owning discovery. Open source will increasingly own production."
+
+So yes, he is claiming mature production use cases tend to move away from closed frontier models toward open-weight specialized models.
+
+The nuance is not that he says "only some" in the main prediction. The nuance comes in the caveat section:
+
+> "this will take longer than people think"
+
+and:
+
+> "Most use cases are just not at the point where the 'shape' of the agent is finalized"
+
+and:
+
+> "The use case would have to be very high ROI and already fully deployed at scale"
+
+So the exact reading is: closed frontier models dominate new/discovery-stage use cases; open source increasingly wins mature production use cases; but the migration is slow because most use cases are not mature enough yet.
+
+Check-back: does his caveat weaken the direction of the claim, or mostly weaken the timeline and practical feasibility?
