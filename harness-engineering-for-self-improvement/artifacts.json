@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260709013046000",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "Why are fuzzy evaluators the bottleneck for self-improving harnesses?",
+    "marker": "Final synthesis grill / evaluator bottleneck",
+    "note": "User noticed that unit tests are unusually crisp, while summaries, idea extraction, and ranking depend on judgment or taste.",
+    "synthesis": "The central bottleneck is that many valuable tasks do not have unit-test-shaped feedback. For summaries, research taste, idea ranking, and learning artifacts, the evaluator must judge whether the output captured the real crux, prioritized the right ideas, and will remain useful later. If that verifier has weak taste, the self-improvement loop can optimize for shallow proxies instead of real value.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "im not an expert software eng, but i undersand how some thing, like unit tests for example, might indicate whether something is right/wrong - but most things aren't this shape > ie,\n\nlet's think of some examples here?\n\n- does the summary capture the crux of the argument?\n- were the ideas extracted and ranked correctly?\n\nso this all just depends on whether or not the final verifier has good taste to understand if the output is good/bad?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, that is the evaluator bottleneck. Unit tests give crisp feedback, but many research and learning outputs require judgment: did the summary catch the real crux, did the ranking reflect importance, and will the artifact be useful later? In those cases, the loop is only as good as the verifier's taste or the proxy signals it uses."
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T01:30:46.000Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260709013046000-why-are-fuzzy-evaluators-the-bottleneck-for-self-improving-harnesses.md"
+  },
+  {
     "id": "20260709012115000",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
