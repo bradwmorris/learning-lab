@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260709011657000",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "What exactly is a harness in a coding agent?",
+    "marker": "Final synthesis grill / harness definition",
+    "note": "User began the review by defining a harness broadly as the structure/system surrounding the model.",
+    "synthesis": "A harness is the runtime machinery that makes a model act usefully on a task: prompt assembly, context retrieval, tool access, memory, workflow loops, permission checks, logging, retries, and evaluation. The user's first answer had the right center but was too broad, because deployment infrastructure and product UI can also be called surrounding systems.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "the structure/system surrounding the model that allow it to do the things"
+      },
+      {
+        "role": "assistant",
+        "content": "That answer has the right center, but it is too broad: \"system surrounding the model\" could also describe deployment infrastructure or product UI. Sharpen it using a coding agent: name three concrete responsibilities that belong inside the harness, and one surrounding thing that is not the harness."
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T01:16:57.000Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260709011657000-what-exactly-is-a-harness-in-a-coding-agent.md"
+  },
+  {
     "id": "20260708232537000",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
