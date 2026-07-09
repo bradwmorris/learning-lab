@@ -6,7 +6,7 @@
 
 ## Summary
 
-The paradox is that the story people tell says open source is winning, but one important enterprise metric says open source share is falling. Zhang's resolution is maturity: a use case means a specific business job AI is deployed to do, like customer support triage, coding assistance, invoice extraction, sales email drafting, legal review, or internal search. Most enterprise use cases are still immature, so teams buy frontier closed models while discovering the workflow. Mature, repeated, high-volume use cases are where open models can be fine-tuned and optimized.
+The user's interpretation is basically right: Zhang's paradox is narrative versus measured enterprise share, and his resolution is that new use cases start on frontier models while mature use cases can migrate toward specialized open models. The main stress-test correction is that migration is not automatic. It only makes sense when the use case is stable, high-volume, valuable, data-rich, and worth the fine-tuning/infrastructure effort.
 
 ## Media
 
@@ -50,3 +50,19 @@ When Zhang says enterprise AI is early in the maturity curve, he means most of t
 Once the workflow is stable and high-volume, they can fine-tune a smaller open model to do that narrow job quickly and cheaply.
 
 Check-back: pick one use case, like customer support. What would make it mature enough to replace a frontier model with a smaller fine-tuned open model?
+
+### user
+
+My thought is that the claim is basically: the popular narrative is that open source is winning and catching up, but the numbers say open source is declining, and this is the paradox. He reconciles it by saying that when there are new use cases, most businesses will use frontier models. But once they've been using those frontier models in those use cases for some time, they'll be able to convert to open source models. Is that correct?
+
+### assistant
+
+Yes, that is the right skeleton.
+
+Stress test: replace "they'll be able to convert" with "some of those use cases become candidates for conversion." The conversion is not guaranteed.
+
+A use case needs to become stable enough that the company knows the input distribution, desired behavior, failure modes, evaluation criteria, and ROI. It also needs enough volume and data to justify fine-tuning or distillation.
+
+The article's strongest claim is not that closed models lose every mature use case; it is that frontier models dominate discovery, while open models become more attractive in production when specialization, latency, and unit economics matter.
+
+Check-back: what are two conditions that would make a frontier-to-open migration not worth it?
