@@ -3,5 +3,6 @@
   "sourceUrl": "https://arxiv.org/pdf/2605.09998",
   "author": "Seth Karten, Joel Zhang, Tersoo Upaa Jr, Ruirong Feng, Wenzhe Li, Chengshuai Shi, Chi Jin, Kiran Vodrahalli",
   "type": "paper",
-  "createdAt": "2026-07-09"
+  "createdAt": "2026-07-09",
+  "tutorPrompt": "continual-harness-online-adaptation-for-self-improving-foundation-agents/tutor-prompt.md"
 }
