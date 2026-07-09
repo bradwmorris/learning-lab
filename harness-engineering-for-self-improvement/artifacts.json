@@ -1,5 +1,32 @@
 [
   {
+    "id": "20260709012115000",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "Why might the harness be the path to RSI?",
+    "marker": "Final synthesis grill / crux of article",
+    "note": "User sharpened the article's TLDR from harnesses being useful to harnesses potentially being the tractable path to recursive self-improvement.",
+    "synthesis": "The article's sharper crux is that harness engineering may be the practical near-term substrate for recursive self-improvement. Because harnesses are code, a system can edit prompts, memory rules, workflows, tools, evals, and optimizer logic, test those changes, keep improvements, and become better at future improvement without directly rewriting model weights.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "are we sure this is correct > isn't the whole thing being implied here that > the harness may be the path to rsi?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. The sharper crux is that harness engineering may be the practical near-term path to RSI: the harness is not just support infrastructure; it may be the editable substrate that lets a model improve the system that helps it improve later."
+      },
+      {
+        "role": "user",
+        "content": "ok - next question, really help me understand this"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T01:21:15.000Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260709012115000-why-might-the-harness-be-the-path-to-rsi.md"
+  },
+  {
     "id": "20260709011657000",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
