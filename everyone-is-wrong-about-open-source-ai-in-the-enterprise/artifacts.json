@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260709030248122",
+    "resourceSlug": "everyone-is-wrong-about-open-source-ai-in-the-enterprise",
+    "kind": "question",
+    "title": "Is enterprise open-source LLM spend really falling?",
+    "marker": "Claim: open source is eating enterprise / 11% vs 19%",
+    "note": "Validated the article claim against Menlo, Hugging Face, OpenRouter/a16z, Linux Foundation, TechCrunch, and current market reporting.",
+    "synthesis": "The 11% from 19% claim is directionally supported by Menlo Ventures for U.S. enterprise foundation-model API market share, but it is not a clean measure of all enterprise AI spend. The broader open-source narrative is also real in developer/startup/open-weight usage: Hugging Face and OpenRouter show rapid open-model growth. The reconciliation is that closed models dominate enterprise API dollars and regulated/mature procurement, while open models are growing in developer ecosystems, startups, cost-sensitive workloads, and self-hosted/specialized production.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "Go and spend a good deal of time trying to validate or invalidate the claim: “The prevailing story right now is that open source is eating the enterprise... open source models just fell to 11% of enterprise LLM spend, down from 19% a year ago.” Deep background websearch."
+      },
+      {
+        "role": "assistant",
+        "content": "Researched Menlo Ventures 2024, mid-year 2025, and December 2025 enterprise reports; Hugging Face Spring 2026 open-source ecosystem data; OpenRouter/a16z 100T-token usage study; Linux Foundation open-source AI adoption research; TechCrunch coverage of Menlo; and current market reporting on AI cost pressure. Working conclusion: Menlo supports the directional enterprise API-share claim, with important methodology caveats; broader ecosystem data supports the counter-narrative that open-weight models are growing quickly outside large-enterprise API spend."
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T03:02:48.122Z",
+    "file": "everyone-is-wrong-about-open-source-ai-in-the-enterprise/artifacts/20260709030248122-is-enterprise-open-source-llm-spend-really-falling.md"
+  },
+  {
     "id": "20260709122455018",
     "resourceSlug": "everyone-is-wrong-about-open-source-ai-in-the-enterprise",
     "kind": "insight",
