@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260709014030000",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "insight",
+    "title": "Can harness improvements later improve model weights?",
+    "marker": "Section: Joint Optimization with Model Weights",
+    "note": "User noticed that even if harness improvement does not immediately touch weights, the traces and data from harness use could later train or adapt the model.",
+    "synthesis": "Yes: this is the bridge from harness-only improvement to joint optimization. A harness can improve capability without changing weights, but it also produces trajectories, failure logs, successful workflows, tool-use traces, eval outcomes, and preference data. Those artifacts can later become training or adaptation data for model weights, if the system has a trusted process for selecting high-quality data.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "one thing im thinking > does she discuss this? > another interesting thing > even if the harness improvements aren't immediately touching the weights > strong case that the data may at some point be used to improve the weights"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is basically the joint-optimization bridge. Harness changes may start as non-parametric improvements, but the harness also creates reusable data: trajectories, failures, fixes, eval results, and examples of good process. Later, that data can be used to update or train model weights."
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T01:40:30.000Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260709014030000-can-harness-improvements-later-improve-model-weights.md"
+  },
+  {
     "id": "20260709013750000",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
