@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260709044842691",
+    "resourceSlug": "a-field-guide-to-fable-finding-your-unknowns",
+    "kind": "stuck",
+    "title": "How does map versus territory explain agent unknowns?",
+    "marker": "Section 1: map versus territory",
+    "note": "User paused on how the map/territory metaphor relates to the article's argument about agentic coding.",
+    "synthesis": "In the article, the map is the prompt, plan, skill file, or context you give the agent. The territory is the actual task: the codebase, constraints, edge cases, product taste, and real-world mess. Unknowns are the gaps between those two. When the map is incomplete, the agent must guess what the territory requires.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "the map is not the territory. how is this related?"
+      },
+      {
+        "role": "assistant",
+        "content": "The map is what you give the agent: your prompt, plan, examples, skills, and context. The territory is the real thing the agent has to work inside: the actual codebase, the product constraints, the edge cases, your taste, the user need, and all the messy details. The article is saying: agent failures often happen in the gap between those two. Your prompt might sound clear as a map, but the real task may contain things the map did not describe. Those gaps are what Thariq calls unknowns. So when Claude or Fable makes a bad choice, it may not be because it cannot code. It may be because the map you gave it did not match the territory it had to navigate. Check-back: imagine you ask an agent to add a login button. What is one thing that might exist in the territory that was not obvious from that simple map?"
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T04:48:42.691Z",
+    "file": "a-field-guide-to-fable-finding-your-unknowns/artifacts/20260709044842691-how-does-map-versus-territory-explain-agent-unknowns.md"
+  },
+  {
     "id": "20260709044642000",
     "resourceSlug": "a-field-guide-to-fable-finding-your-unknowns",
     "kind": "question",
