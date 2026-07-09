@@ -17,3 +17,15 @@ Create a prompt that breaks this article into logical sections, adds more contex
 ### assistant
 
 Created [tutor-prompt.md](../tutor-prompt.md), a resource-level audio walkthrough prompt with eight logical sections, near-verbatim read-aloud text, plain-English context, check-back questions, and ready-to-continue prompts after each section.
+
+### user
+
+I want you to break this article up into logical sections, add more context/colour to it, etc.
+
+Create me a prompt with those sections, so another agent will just talk me through each section in plain and simple terms, engaging me, asking me if ready to move to next - I will be speaking via audio.
+
+JUST ENSURE EVERY SINGLE SECTION IS READ TO ME ALMOST VERBATIM.
+
+### assistant
+
+Tightened [tutor-prompt.md](../tutor-prompt.md) so the next audio tutor must treat each `READ ALOUD` block as source text to be read first, almost verbatim, without skipping, compressing, or summarizing before the plain-English explanation. The prompt now also requires an explicit ready-to-continue answer before moving on.

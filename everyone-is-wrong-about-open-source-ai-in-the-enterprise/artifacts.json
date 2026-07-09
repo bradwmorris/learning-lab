@@ -69,7 +69,7 @@
     "title": "How should an audio tutor walk through this article?",
     "marker": "Whole article",
     "note": "Prompt for section-by-section audio tutoring with near-verbatim reading.",
-    "synthesis": "Use the tutor prompt to read each logical section of Jesse Zhang's article almost verbatim, then add brief plain-English context and ask whether the user is ready to continue.",
+    "synthesis": "Use the tutor prompt to read every logical section of Jesse Zhang's article almost verbatim first, then add brief plain-English context and ask whether the user is ready to continue. The audio tutor must not skip, compress, or summarize the source text before reading it.",
     "media": [],
     "interaction": [
       {
@@ -79,6 +79,14 @@
       {
         "role": "assistant",
         "content": "Created a resource-level tutor prompt that preserves the article section by section, instructs the next agent to read each section almost verbatim before explaining it, and requires an explicit ready-to-move-on check after every section."
+      },
+      {
+        "role": "user",
+        "content": "I want you to break this article up into logical sections, add more context/colour to it, etc.\n\nCreate me a prompt with those sections, so another agent will just talk me through each section in plain and simple terms, engaging me, asking me if ready to move to next - I will be speaking via audio.\n\nJUST ENSURE EVERY SINGLE SECTION IS READ TO ME ALMOST VERBATIM."
+      },
+      {
+        "role": "assistant",
+        "content": "Tightened tutor-prompt.md so the next audio tutor must treat each READ ALOUD block as source text to be read first, almost verbatim, without skipping, compressing, or summarizing before the plain-English explanation. The prompt now also requires an explicit ready-to-continue answer before moving on."
       }
     ],
     "createdAt": "2026-07-09T02:24:55.018Z",
