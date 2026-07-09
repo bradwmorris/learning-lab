@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "20260709044642000",
+    "resourceSlug": "a-field-guide-to-fable-finding-your-unknowns",
+    "kind": "question",
+    "title": "How should an audio tutor walk me through the Fable unknowns article?",
+    "marker": "Whole article",
+    "note": "Prompt for another agent to read the article in logical sections, nearly verbatim, while adding simple context and checking readiness before moving on.",
+    "synthesis": "Use this prompt to run a spoken guided reading of the article. The tutor should read each section almost verbatim, add brief context in plain language, ask one understanding check, then wait until the learner says they are ready to continue.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "i want you to break this article up into logical sections, add more context/colour to it, etc\n\ncreate me a prompt with those sections, so another agent will just talk me through each section in plain and simple terms, engaging me, asking me if ready to move to next - i will be speaking via audio\n\nJUST ENSURE EVERY SINGLE SECTION IS READ TO ME ALMOST VERBATIME"
+      },
+      {
+        "role": "assistant",
+        "content": "Created a guided audio-reading prompt that splits the article into logical sections. Each section includes a near-verbatim passage, a short plain-English context note, and a check-back before continuing."
+      }
+    ],
+    "createdAt": "2026-07-09T04:46:42.000Z",
+    "file": "a-field-guide-to-fable-finding-your-unknowns/artifacts/20260709044642000-guided-audio-reading-prompt.md"
+  }
+]
