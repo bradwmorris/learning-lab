@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "20260709050253000",
+    "resourceSlug": "getting-started-with-loops",
+    "kind": "question",
+    "title": "How should an audio tutor walk me through Getting Started with Loops?",
+    "marker": "Whole article",
+    "note": "Prompt for another agent to read the article in logical sections, almost verbatim, while adding short context and checking readiness before moving on.",
+    "synthesis": "Use this prompt to run a spoken guided reading of the article. The tutor should give a brief plain-English frame, read each article section almost verbatim, add simple context and color, ask one useful check-back, and wait for the learner to say they are ready before continuing.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "i want you to break this article up into logical sections, add more context/colour to it, etc\n\ncreate me a prompt with those sections, so another agent will just talk me through each section in plain and simple terms, engaging me, asking me if ready to move to next - i will be speaking via audio\n\nJUST ENSURE EVERY SINGLE SECTION IS READ TO ME ALMOST VERBATIME"
+      },
+      {
+        "role": "assistant",
+        "content": "Created a guided audio-reading prompt for the article. It splits the article into logical sections and instructs the tutor to read every section almost verbatim, add brief context, engage through spoken check-backs, and wait before moving on."
+      }
+    ],
+    "createdAt": "2026-07-09T05:02:53.000Z",
+    "file": "getting-started-with-loops/artifacts/20260709050253000-how-should-an-audio-tutor-walk-me-through-getting-started-with-loops.md"
+  }
+]
