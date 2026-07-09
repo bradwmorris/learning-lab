@@ -1,5 +1,28 @@
 [
   {
+    "id": "20260709013750000",
+    "resourceSlug": "harness-engineering-for-self-improvement",
+    "kind": "question",
+    "title": "What concepts are required to deeply understand harness engineering?",
+    "marker": "Final synthesis grill / concept map",
+    "note": "User asked for the core concepts, papers, and ideas needed to deeply understand the article.",
+    "synthesis": "To deeply understand the article, the user needs a layered map: model versus harness; harness as runtime/OS; context and memory engineering; workflow search; harness-as-code and executable search spaces; ACE/MCE/Meta-Harness; STOP/Self-Harness; AlphaEvolve/DGM; joint optimization with model weights; and the evaluator bottleneck. The deepest distinction is not memorizing paper names but knowing what object each system improves: context, workflow, solution, harness, improver, optimizer, or model weights.",
+    "media": [],
+    "interaction": [
+      {
+        "role": "user",
+        "content": "keep just helping me work through the material in the article.\n\nwhat are the core concepts/papers/ideas I really need to understand to deeply understand this"
+      },
+      {
+        "role": "assistant",
+        "content": "The core map is: distinguish model/harness/deployment/workflow/memory/evaluator/optimizer; understand harnesses as OS-like runtime systems; track the progression from prompts to context to workflow to harness code to optimizer code; learn ACE, MCE, Meta-Harness, STOP, Self-Harness, AlphaEvolve, DGM, and joint optimization by asking what each one improves; and treat evaluation as the central bottleneck."
+      }
+    ],
+    "transcript": "",
+    "createdAt": "2026-07-09T01:37:50.000Z",
+    "file": "harness-engineering-for-self-improvement/artifacts/20260709013750000-what-concepts-are-required-to-deeply-understand-harness-engineering.md"
+  },
+  {
     "id": "20260709013231000",
     "resourceSlug": "harness-engineering-for-self-improvement",
     "kind": "question",
