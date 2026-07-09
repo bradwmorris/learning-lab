@@ -6,7 +6,7 @@
 
 ## Summary
 
-Zhang's explicit article claim is stronger than a cautious reading: if his maturity-curve explanation is right, every use case being prototyped on a frontier model today is a future open-source migration. He frames frontier labs as owning discovery and open source as increasingly owning production. The nuance is not "only some" in that sentence; the nuance comes immediately after, where he says migration will take many years and requires finalized agent shape, high ROI, scale, fine-tuning expertise, and enough data.
+Zhang's explicit article claim is that frontier labs own discovery and open source increasingly owns production. The stronger stress test is whether open models can also eat into discovery/frontier demand. They can, whenever open models are good enough for exploration and win on cost, speed, privacy, control, deployability, or developer default. So the better model is not a one-way lifecycle, but a routing problem: frontier tokens expand with new hard use cases, while open models substitute into both mature production and some new/discovery use cases.
 
 ## Media
 
@@ -98,3 +98,17 @@ and:
 So the exact reading is: closed frontier models dominate new/discovery-stage use cases; open source increasingly wins mature production use cases; but the migration is slow because most use cases are not mature enough yet.
 
 Check-back: does his caveat weaken the direction of the claim, or mostly weaken the timeline and practical feasibility?
+
+### user
+
+I want to think through demand for frontier/closed tokens. The claim is that new use cases go to closed models first, then when mature they move to open source/proprietary. But what if open source eats into the frontier as well? Are there situations where new use cases also go with open source?
+
+### assistant
+
+Yes. That is the main pressure on Zhang's framework.
+
+If open-weight models are close enough, then discovery does not always require closed frontier tokens. New use cases may start on open models when cost sensitivity is high, data cannot leave a controlled environment, latency/local deployment matters, the task is technical and developers are comfortable with open models, the organization wants model control, or the open model is already strong enough for the first prototype.
+
+The better framing is: frontier models have an advantage in uncertain/high-stakes/high-complexity discovery, but open models can compete in discovery when the frontier premium is not worth it.
+
+Check-back: for a brand-new internal-docs assistant, what would push you toward starting with Claude/GPT, and what would push you toward starting with an open model?
